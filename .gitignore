@@ -1,0 +1,72 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.env
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# Backend (Java / Spring Boot / Maven)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+target/
+*.class
+*.war
+*.ear
+backend/HELP.md
+
+# Frontend (Flutter / Dart)
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.pub-cache/
+frontend/.pub/
+frontend/build/
+frontend/coverage/
+frontend/migrate_working_dir/
+frontend/app.*.symbols
+frontend/app.*.map.json
+frontend/android/app/debug
+frontend/android/app/profile
+frontend/android/app/release
+frontend/ios/Flutter/.last_build_id
+frontend/ios/Flutter/Generated.xcconfig
+frontend/ios/Flutter/app.framework
+frontend/ios/Flutter/flutter_assets/
+frontend/ios/Flutter/Flutter.framework
+frontend/ios/Flutter/Flutter.podspec
+frontend/ios/ServiceDefinitions.json
+
+# Windows / Linux / macOS Desktop build outputs
+frontend/windows/flutter/ephemeral/
+frontend/linux/flutter/ephemeral/
+frontend/macos/Flutter/ephemeral/
+
+# Logs & Temporary Files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
