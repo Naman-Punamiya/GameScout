@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'screens/main_navigation_screen.dart';
+import 'theme/app_theme.dart';
+import 'theme/theme_controller.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+    ),
+  );
+  runApp(const GameScoutApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class GameScoutApp extends StatelessWidget {
+  const GameScoutApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Home Page'),
-      ),
+    return ListenableBuilder(
+      listenable: ThemeController.instance,
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'GameScout',
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeController.instance.themeMode,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          home: const MainNavigationScreen(),
+        );
+      },
     );
   }
 }
